@@ -8,7 +8,7 @@ The goal is to automatically generate the layout of a MIM capacitor while ensuri
 
 ---
 
-## 🎯 Project Objectives
+## Project Objectives
 
 - Understand the structure and technology of the **MIM capacitor** in the GF180 PDK.
 - Build a **parametric layout generator** using **Python + gdspy**.
@@ -21,6 +21,6 @@ The goal is to automatically generate the layout of a MIM capacitor while ensuri
 - Export the final design in **GDSII** format.
 - Provide a reproducible and verifiable layout automation workflow.
 
-### AUTHOR: Javier González Santamaría
+### Javier González Santamaría
 Politecnico di Milano
 Embedded Systems — CAD2 Project (Analog Layout Automation)
