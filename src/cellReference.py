@@ -45,13 +45,12 @@ device.add([ref1, ref2])
 # Top cell for this example
 top = lib.new_cell("TOP")
 #main = gdspy.Cell("MAIN")
-top.add(gdspy.CellArray(device, 3, 2, (6, 7)))
+top.add(gdspy.CellReference(device, 3, 2, (6, 7)))
 
 
 # Write GDS file
 try:
-    #lib.write_gds("gds/cellReference.gds", cells=[top])
-    lib.write_gds("C:/KLayoutTests/cellReference.gds", cells=[top])
+    lib.write_gds("gds/cellReference.gds")
 
     gdspy.LayoutViewer()
     print("cellReference.gds generated successfully.")
