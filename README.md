@@ -1,7 +1,7 @@
 # CAD2 Porting PDK 180nm Global Foundries
 ### *Parametric layout generator for the GlobalFoundries 180 nm MCU PDK*  
 **Embedded Systems – CAD2 Project (Analog Layout Automation)**  
-Politecnico di Milano  
+***Politecnico di Milano***
 
 ---
 
@@ -18,8 +18,7 @@ The project is part of the **Embedded Systems course (Politecnico di Milano)**.
 - **Dott. Giuseppe Chiari**  
 - **Dott. Michele Piccoli**  
 - **Prof. Davide Zoni**  
-Politecnico di Milano  
-
+- 
 ---
 
 ## Project Goals (from the official assignment)
@@ -55,6 +54,7 @@ ES_CAD2/
 ├── docs/              # Notes, explanations, DRM excerpts
 ├── tests/             # Geometry checks, rule verification
 └── README.md          # Project documentation
+```
 
 ## Author  
 **Javier González Santamaría**  
