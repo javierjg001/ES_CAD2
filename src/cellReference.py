@@ -36,7 +36,7 @@ top.add(gdspy.CellArray(device, 10, 5, (6, 7)))
 try:
     lib.write_gds("gds/cellReference.gds")
 
-    #gdspy.LayoutViewer()
+    gdspy.LayoutViewer()
     print("cellReference.gds generated successfully.")
 except Exception as e:
     print("Error generating cellReference.gds:", e)

@@ -1,26 +1,62 @@
-# GF180 MIM Capacitor Generator  
-### Parametric layout generator for the GlobalFoundries 180nm MCU PDK (Analog CAD Project)
-
-This repository contains a **parametric generator of a MIM (Metal–Insulator–Metal) capacitor** for the **GlobalFoundries GF180MCU process**.  
-The project is developed as part of the **Embedded Systems course (Politecnico di Milano)**, under the **CAD2 – Analog Layout Automation** project track.
-
-The goal is to automatically generate the layout of a MIM capacitor while ensuring that all geometrical constraints defined in the **GF180 MCU Design Rule Manual (DRM), Section 10.4** are satisfied.
+# CAD2 Porting PDK 180nm Global Foundries
+### *Parametric layout generator for the GlobalFoundries 180 nm MCU PDK*  
+**Embedded Systems – CAD2 Project (Analog Layout Automation)**  
+Politecnico di Milano  
 
 ---
 
-## Project Objectives
+## Project Overview
 
-- Understand the structure and technology of the **MIM capacitor** in the GF180 PDK.
-- Build a **parametric layout generator** using **Python + gdspy**.
-- Implement **rule-checking logic** according to the DRM:
-  - Minimum width and height  
-  - Minimum area  
-  - Enclosure rules between plates  
-  - Minimum spacing to other layers  
-  - Allowed shapes and via placement rules  
-- Export the final design in **GDSII** format.
-- Provide a reproducible and verifiable layout automation workflow.
+This repository contains a **parametric generator for a MIM (Metal–Insulator–Metal) capacitor** targeting the **GlobalFoundries GF180MCU technology**.  
+The generator is implemented in **Python using gdspy**, with the purpose of creating **rule-compliant layouts automatically**, following the specifications of the **GF180 MCU Design Rule Manual (DRM), Section 10.4 – MIM Capacitors**.
 
-### Javier González Santamaría
+The project is part of the **Embedded Systems course (Politecnico di Milano)**.
+
+---
+
+## Project Supervisors
+- **Dott. Giuseppe Chiari**  
+- **Dott. Michele Piccoli**  
+- **Prof. Davide Zoni**  
+Politecnico di Milano  
+
+---
+
+## Project Goals (from the official assignment)
+
+**Porting PDK 180 nm GlobalFoundries**
+
+Analog layout design automation is increasingly important to accelerate analog IC development.  
+This project contributes to this direction by providing **parametric and customizable device-drawing procedures**.
+
+---
+
+## Specific Objectives of This Repository
+
+- Study the **MIM capacitor structure and design rules** in GF180 (DRM 10.4).
+- Implement **parametric geometry generation** using gdspy.
+- Verify and enforce:
+  - minimum width and height  
+  - minimum area  
+  - enclosure rules between plates  
+  - spacing to other layers  
+  - via placement constraints  
+- Produce a **GDSII layout output** of the generated capacitor.
+- Build a **reproducible and extensible framework** for analog device generation in GF180.
+
+---
+
+## Repository Structure
+```text
+ES_CAD2/
+│
+├── src/               # Python parametric generator scripts (gdspy)
+├── gds/               # Generated GDSII layouts
+├── docs/              # Notes, explanations, DRM excerpts
+├── tests/             # Geometry checks, rule verification
+└── README.md          # Project documentation
+
+## Author  
+**Javier González Santamaría**  
+Embedded Systems – A.Y. 2025  
 Politecnico di Milano
-Embedded Systems — CAD2 Project (Analog Layout Automation)
