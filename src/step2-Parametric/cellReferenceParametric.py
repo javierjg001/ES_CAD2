@@ -1,21 +1,28 @@
 import gdspy
 import numpy as np
+from functions import *
 
+
+# ==========================================================
+# CELL REFERENCE PARAMETRIC SHAPES
+# ==========================================================
+
+# Create a new GDS library
 lib = gdspy.GdsLibrary()
 
 ld_fulletch = {"layer": 1, "datatype": 3}
 ld_partetch = {"layer": 2, "datatype": 3}
 ld_liftoff  = {"layer": 0, "datatype": 7}
 
-p1 = gdspy.Rectangle((-3, -3), (3, 3), **ld_fulletch)
-p2 = gdspy.Rectangle((-5, -3), (-3, 3), **ld_partetch)
-p3 = gdspy.Rectangle((5, -3), (3, 3), **ld_partetch)
-p4 = gdspy.Round((0, 0), 2.5, number_of_points=6, **ld_liftoff)
+p1 = create_rectangle(-3, -3, 6, 6, **ld_fulletch)
+p2 = create_rectangle(-5, -3, 2, 6, **ld_partetch)
+p3 = create_rectangle(5, -3, -2, 6, **ld_partetch)
+p4 = create_circle(0, 0, 2.5, **ld_liftoff, num_points=6)
 
 contact = lib.new_cell("CONTACT")
-contact.add([p1, p2, p3, p4]) 
+contact.add([p1, p2, p3, p4])
 
-cutout = gdspy.Polygon([
+cutout = create_polygon([
     (0,0),(5,0),(5,5),(0,5),(0,0),
     (2,2),(2,3),(3,3),(3,2),(2,2)
 ])
@@ -34,12 +41,8 @@ top = lib.new_cell("TOP")
 top.add(gdspy.CellArray(device, 10, 5, (6, 7)))
 
 try:
-    lib.write_gds("gds/cellReference.gds")
+    lib.write_gds("gds/cellReferenceParametric.gds")
 
-    gdspy.LayoutViewer()
-    print("cellReference.gds generated successfully.")
+    print("cellReferenceParametric.gds generated successfully.")
 except Exception as e:
-    print("Error generating cellReference.gds:", e)
-
-
-#lib.write_gds("gds/cellReference.gds")
+    print("Error generating cellReferenceParametric.gds:", e)
