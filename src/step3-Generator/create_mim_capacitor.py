@@ -99,6 +99,7 @@ def create_mim_capacitor(
     via_y_min = center_y - height/2 + VIA2_EDGE_MARGIN
     via_y_max = center_y + height/2 - VIA2_EDGE_MARGIN
 
+
     if via_x_min >= via_x_max or via_y_min >= via_y_max:
         raise ValueError("MIM too small to place Via2 respecting MIM.4/MIM.5 rules")
 
