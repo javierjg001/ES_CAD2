@@ -5,7 +5,11 @@ def create_mim_capacitor(
     center=(0, 0)):
 
     import gdspy
-    from step2_Parametric.functions import create_rectangle, create_circle, create_polygon
+    from ..step2_Parametric.functions import (
+    create_rectangle,
+    create_circle,
+    create_polygon)
+
 
     LAYERS = {
     "FuseTop":  {"layer": 75, "datatype": 0},

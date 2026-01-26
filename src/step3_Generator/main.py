@@ -1,5 +1,5 @@
 import gdspy
-from create_mim_capacitor import create_mim_capacitor 
+from .create_mim_capacitor import create_mim_capacitor
 
 # Create GDS library
 lib = gdspy.GdsLibrary()
