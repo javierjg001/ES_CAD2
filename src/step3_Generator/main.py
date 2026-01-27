@@ -16,7 +16,9 @@ mim_cell = create_mim_capacitor(
 lib.add(mim_cell)
 
 # Write GDS file
-lib.write_gds("test_mim_option_A.gds")
-
-print("GDS file 'test_mim_option_A.gds' generated successfully.")
+try:
+    lib.write_gds("gds/test_mim_option_A.gds")
+    print("test_mim_option_A.gds generated successfully.")
+except Exception as e:
+    print("Error generating test_mim_option_A.gds:", e)
 
