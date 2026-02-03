@@ -41,6 +41,8 @@ def offset_shape(shape, distance, layer=1, datatype=0):
         layer=layer,
         datatype=datatype
     )
+#This function generates an offset version of a layout shape by expanding or 
+# shrinking its boundary by a given distance, and assigns it to a specified layer.
 
 # --------------------ROTATE FUNCTION-------------------------
 def rotate_shape(shape, angle, center=None):
@@ -63,6 +65,10 @@ def scale_shape(shape, scalex, scaley=None, center=None):
         )
     shape.scale(scalex, scaley, center)
     return shape
+#This function scales a layout shape along the X and Y directions, using the shape’s 
+# bounding box center as default reference if no center is provided.
+#If the scaling center does not coincide with the shape’s center, the shape is scaled 
+# with respect to that point, which also results in a translation.
 
 # --------------------TRANSLATE FUNCTION-------------------------
 def translate_shape(shape, dx, dy):

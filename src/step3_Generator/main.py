@@ -1,6 +1,9 @@
 import gdspy
 from .create_mim_capacitor import create_mim_capacitor
 
+name_file = "mim_option_A_B_offset"
+gds_filename = f"gds/{name_file}.gds"
+
 # Create GDS library
 lib = gdspy.GdsLibrary()
 
@@ -9,8 +12,8 @@ top = lib.new_cell("TOP_MIM")
 
 # Create a test MIM capacitor option A
 mim_cell_A = create_mim_capacitor(
-    width=20,      # um
-    height=10,     # um
+    width=5,      # um (20)
+    height=5,     # um (10)
     option="A",
     center=(0, 0)
 )
@@ -35,8 +38,7 @@ lib.add(top)
 
 # Write GDS file
 try:
-    lib.write_gds("gds/mim_option_A_B.gds")
-    print("mim_option_A_B.gds generated successfully.")
+    lib.write_gds(gds_filename)
+    print(f"{gds_filename} generated successfully.")
 except Exception as e:
-    print("Error generating mim_option_A_B.gds:", e)
-
+    print(f"Error generating {gds_filename}: {e}")

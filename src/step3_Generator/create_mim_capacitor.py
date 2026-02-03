@@ -64,13 +64,19 @@ def create_mim_capacitor(
     metal_bottom = offset_shape(fuseTop, distance=0.6, **LAYERS[BOTTOM_METAL])
     
     # FuseTop enclosure by CAP_MK = 0, rule MIM.7
-    cap_mk = create_rectangle(
-        x = center_x - width/2,
-        y = center_y - height/2,
-        width = width,
-        height = height,
-        **LAYERS["CAP_MK"]
-    )
+    #cap_mk = create_rectangle(
+    #     x = center_x - width/2,
+    #     y = center_y - height/2,
+    #     width = width,
+    #     height = height,
+    #     **LAYERS["CAP_MK"]
+    # )
+
+    # ADDING THE OFFSET APPROACH FOR CAP_MK TO COMPLY WITH RULE MIM.7
+    #  Fusion Top enclosure by CAP_MK = 0.6 um (so it's same as the bottom metal offset)
+    d_Cap_Top = 0.6  # um (enclosure distance for CAP_MK)
+    # FuseTop enclosure by CAP_MK = 0, rule MIM.7
+    cap_mk = offset_shape(fuseTop, distance=d_Cap_Top, **LAYERS["CAP_MK"])
 
     # MIM_L_MK to identify capacitor length, rule MIM.12
     MIM_L_MK_THICKNESS = 0.2  # um (marker thickness)
