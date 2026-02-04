@@ -1,3 +1,6 @@
+# TO RUN: (must be run from ES_CAD2 folder)
+# python -m src.step3_Generator.main
+
 import gdspy
 from .create_mim_capacitor import create_mim_capacitor
 

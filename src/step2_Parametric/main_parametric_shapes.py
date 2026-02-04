@@ -22,6 +22,7 @@ top.add(rotate_shape(create_rectangle(40, 0, 10, 10, layer=20, datatype=0), angl
 top.add(scale_shape(create_polygon([(20, -20), (25, -10), (30, -20), (35,-10)], layer=60, datatype=0), scalex=3, scaley=0.5))
 top.add(translate_shape(create_rectangle(50, 0, 10, 10, layer=30, datatype=0), dx=5, dy=5))
 
+
 # Write GDS file
 try:
     lib.write_gds("gds/parametric_shapes.gds")

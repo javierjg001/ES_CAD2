@@ -37,12 +37,11 @@ device.add([ref1, ref2])
 
 top = lib.new_cell("TOP")
 
-#En vez de array, añade una sola referencia:
+# Instead of array, add a single reference:
 top.add(gdspy.CellArray(device, 10, 5, (6, 7)))
 
 try:
     lib.write_gds("gds/cellReferenceParametric.gds")
-
     print("cellReferenceParametric.gds generated successfully.")
 except Exception as e:
     print("Error generating cellReferenceParametric.gds:", e)

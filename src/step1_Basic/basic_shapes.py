@@ -46,7 +46,7 @@ top.add(outline)
 
 # Write GDS file
 try:
-    lib.write_gds("gds/basic_shapes.gds", cells=[top])
+    lib.write_gds("gds/basic_shapes.gds")
     print("basic_shapes.gds generated successfully.")
 except Exception as e:
     print("Error generating basic_shapes.gds:", e)
