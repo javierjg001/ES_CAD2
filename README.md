@@ -18,15 +18,15 @@ The project is part of the **Embedded Systems course (Politecnico di Milano)**.
 - **Dott. Giuseppe Chiari**  
 - **Dott. Michele Piccoli**  
 - **Prof. Davide Zoni**  
-- 
+
 ---
 
-## Project Goals (from the official assignment)
+## Project Goals
 
-**Porting PDK 180 nm GlobalFoundries**
+**Implementation of GlobalFoundries GF180MCU PDK Design Rules**
 
 Analog layout design automation is increasingly important to accelerate analog IC development.  
-This project contributes to this direction by providing **parametric and customizable device-drawing procedures**.
+This project contributes to this direction by providing **parametric and customizable procedures for the automatic generation of MIM capacitor layouts**, supporting both **Option A and Option B** as defined in the GlobalFoundries GF180MCU PDK.
 
 ---
 
@@ -41,7 +41,6 @@ This project contributes to this direction by providing **parametric and customi
   - spacing to other layers  
   - via placement constraints  
 - Produce a **GDSII layout output** of the generated capacitor.
-- Build a **reproducible and extensible framework** for analog device generation in GF180.
 
 ---
 
@@ -51,8 +50,6 @@ ES_CAD2/
 │
 ├── src/               # Python parametric generator scripts (gdspy)
 ├── gds/               # Generated GDSII layouts
-├── docs/              # Notes, explanations, DRM excerpts
-├── tests/             # Geometry checks, rule verification
 └── README.md          # Project documentation
 ```
 
