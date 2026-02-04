@@ -63,6 +63,8 @@ def create_mim_capacitor(
     # Minimum MiM bottom plate overlap of Top plate (0.6um) (Virtual bottom plate from FuseTop) (rule MIM.3)
     metal_bottom = offset_shape(fuseTop, distance=0.6, **LAYERS[BOTTOM_METAL])
     
+    # HERE ARE TWO POSSIBLE APPROACHES FOR THE CAP_MK LAYER:
+    # 1) Simple approach: CAP_MK coincident with FuseTop area
     # FuseTop enclosure by CAP_MK = 0, rule MIM.7
     #cap_mk = create_rectangle(
     #     x = center_x - width/2,
@@ -72,6 +74,7 @@ def create_mim_capacitor(
     #     **LAYERS["CAP_MK"]
     # )
 
+    # 2) Second approach: adding an offset to the CAP_MK layer so it's larger than the FuseTop area
     # ADDING THE OFFSET APPROACH FOR CAP_MK TO COMPLY WITH RULE MIM.7
     #  Fusion Top enclosure by CAP_MK = 0.6 um (so it's same as the bottom metal offset)
     d_Cap_Top = 0.6  # um (enclosure distance for CAP_MK)
