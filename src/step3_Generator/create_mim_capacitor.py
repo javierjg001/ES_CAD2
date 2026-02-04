@@ -82,18 +82,18 @@ def create_mim_capacitor(
     MIM_L_MK_THICKNESS = 0.2  # um (marker thickness)
 
     if width >= height:
-        # Length along X (width)
+        # Length along X (width), marker at bottom edge
         mim_l_mk = create_rectangle(
             x = center_x - width/2,
-            y = center_y - MIM_L_MK_THICKNESS/2,
+            y = center_y - height / 2,  # bottom edge
             width = width,
             height = MIM_L_MK_THICKNESS,
             **LAYERS["MIM_L_MK"]
         )
     else:
-        # Length along Y (height)
+        # Length along Y (height), marker at right edge
         mim_l_mk = create_rectangle(
-            x = center_x - MIM_L_MK_THICKNESS/2,
+            x = center_x + width / 2 - MIM_L_MK_THICKNESS,  # right edge
             y = center_y - height/2,
             width = MIM_L_MK_THICKNESS,
             height = height,
