@@ -113,12 +113,12 @@ def create_mim_capacitor(
     )
 
     # -----------------------------
-    # Via2 definition (Option A)
+    # Via definition
     # -----------------------------
 
     VIA_SIZE = 0.2          # um (side length of via)
     VIA_SPACING = 0.5       # um (rule MIM.9) MIM.9 – Min. via spacing for sea of via on MIM top plate = 0.5 µm
-    VIA_EDGE_MARGIN = 0.4   # um (rules MIM.4 and MIM.5) 
+    VIA_EDGE_MARGIN = 0.4   # um (rules MIM.4, MIM.5 and MIM.2) 
     # MIM.4 – Minimum MiM top plate (FuseTop) overlap of Via2 = 0.4 um
     # MIM.5 – Minimum spacing between top plate and the Via2 connecting to the bottom plate = 0.4 um
 
